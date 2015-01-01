@@ -4,7 +4,7 @@ Clonos Experiments: Spotify Connect integration
 Spotify Connect integration proof-of-concept
 
 ```bash
-wouter@wouter-linux:~/...$ readelf -Ws ../libs/libspotify_embedded_shared.so | grep 'Sp'
+$ readelf -Ws ../libs/libspotify_embedded_shared.so | grep 'Sp'
      3: 00015b94   164 FUNC    GLOBAL DEFAULT   10 SpRegisterConnectionCallbacks
      4: 0001507c   164 FUNC    GLOBAL DEFAULT   10 SpConnectionLoginPassword
      5: 000159b0   156 FUNC    GLOBAL DEFAULT   10 SpPlaybackPlay
@@ -43,3 +43,30 @@ wouter@wouter-linux:~/...$ readelf -Ws ../libs/libspotify_embedded_shared.so | g
     85: 00014abc   180 FUNC    GLOBAL DEFAULT   10 SpGetMetadataValidRange
     89: 00015740   156 FUNC    GLOBAL DEFAULT   10 SpPlaybackSeek
 ```
+
+Error codes 
+-----------
+*As extracted from a decompiled version of libavriradio.so, which uses libspotify\_embedded\_shared.so*
+
+|Code|Name|
+|---|---|
+|0|SpErrorOk|
+|1|SpErrorFailed|
+|2|SpErrorInitFailed|
+|3|SpErrorWrongAPIVersion|
+|4|SpErrorNullArgument|
+|5|SpErrorInvalidArgument|
+|6|SpErrorUninitialized|
+|7|SpErrorAlreadyInitialized|
+|8|SpErrorLoginBadCredentials|
+|9|SpErrorNeedsPremium|
+|10|SpErrorTravelRestriction|
+|11|SpErrorApplicationBanned|
+|12|SpErrorGeneralLoginError|
+|13|SpErrorUnsupported|
+|14|SpErrorNotActiveDevice|
+|1000|SpErrorPlaybackErrorStart|
+|1001|SpErrorGeneralPlaybackError|
+|1002|SpErrorPlaybackRateLimited|
+|1003|Unknown error|
+||SpErrorPlaybackCappingLimitReached|
