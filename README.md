@@ -3,6 +3,10 @@ Clonos Experiments: Spotify Connect integration
 
 Spotify Connect integration proof-of-concept
 
+Exports in the library
+----------------------
+*libspotify\_embedded\_shared.so*
+
 ```bash
 $ readelf -Ws ../libs/libspotify_embedded_shared.so | grep 'Sp'
      3: 00015b94   164 FUNC    GLOBAL DEFAULT   10 SpRegisterConnectionCallbacks
